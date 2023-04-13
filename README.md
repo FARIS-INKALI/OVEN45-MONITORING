@@ -9,7 +9,7 @@ Ini adalah aplikasi web Streamlit yang untuk melacak dan mengelola sampel di ove
 
 ### Penggunaan
 
-1. Buka aplikasi web di browser Anda dengan menavigasi ke `http://localhost:8501/`.
+1. Scan QR Code yang terletak di OVEN stabilitas atau buka aplikasi web di browser Anda dengan menavigasi ke `https://devtech-oven45.streamlit.app/`.
 
 2. Aplikasi akan menampilkan semua data sampel dalam tabel.
 
