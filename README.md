@@ -1,7 +1,7 @@
 # OVEN45-MONITORING
 ## Digitalization of monitoring oven 45°C in DEVTECH INKALI
 
-Ini adalah aplikasi web Streamlit yang untuk melacak dan mengelola sampel di oven stabilitas secara realtime. Aplikasi ini terhubung ke dokumen Google Sheets di mana data disimpan, sehingga memudahkan pengguna untuk mengakses dan memperbarui data secara bersamaan. Aplikasi ini memiliki fitur sebagai berikut:
+Ini adalah aplikasi web Streamlit untuk melacak dan mengelola sampel di oven stabilitas secara realtime. Aplikasi ini terhubung ke Google Sheets di mana data disimpan, sehingga memudahkan pengguna untuk mengakses dan memperbarui data secara bersamaan. Aplikasi ini memiliki fitur sebagai berikut:
 
 - Menampilkan semua data sampel dari dokumen Google Sheets dalam tabel
 - Menambahkan sampel baru ke dokumen Google Sheets menggunakan formulir
