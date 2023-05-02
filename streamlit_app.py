@@ -35,10 +35,20 @@ with st.container():
 
 # Menampilkan data sebagai tabel menggunakan Streamlit
 df = get_data(worksheet)
-st.dataframe(df[1:], use_container_width=True)
-
-# tambah dataframe gabungan index dengan nama sample
 df['info'] = df.index.astype(str) + ". " + df['Sample']
+
+# Menambahkan style untuk tabel
+def highlight_expired(s):
+    return ['background-color: red' if pd.to_datetime(s['Tanggal Keluar']) < pd.to_datetime('today') else '' for _ in s]
+
+st.dataframe(df.style.apply(highlight_expired, axis=1), use_container_width=True)
+    
+# # Menampilkan data sebagai tabel menggunakan Streamlit
+# df = get_data(worksheet)
+# st.dataframe(df[1:], use_container_width=True)
+
+# # tambah dataframe gabungan index dengan nama sample
+# df['info'] = df.index.astype(str) + ". " + df['Sample']
 
 # Fitur tambah dan hapus baris
 col1, col2 = st.columns(2)
