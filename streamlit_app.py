@@ -4,6 +4,7 @@ import gspread
 from google.oauth2 import service_account
 import numpy as np
 import time
+from datetime import datetime, date
 
 # Create a connection object.
 credentials = service_account.Credentials.from_service_account_info(
@@ -35,7 +36,12 @@ with st.container():
 
 # Menampilkan data sebagai tabel menggunakan Streamlit
 df = get_data(worksheet)
-st.dataframe(df[1:], use_container_width=True)
+
+def highlight_outdated(s):
+    return ['background-color: red']*len(s) if datetime.strptime(s['Tanggal Keluar'], "%Y-%m-%d").date() > date.today()] * len(s)
+
+st.dataframe(df[1:].style.apply(highlight_survived, axis=1), use_container_width=True)
+# st.dataframe(df[1:], use_container_width=True)
 
 # tambah dataframe gabungan index dengan nama sample
 df['info'] = df.index.astype(str) + ". " + df['Sample']
