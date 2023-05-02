@@ -46,8 +46,8 @@ col1, col2 = st.columns(2)
 with col1:
     with st.expander("Tambah sampel baru"):
         with st.form("add_sample", clear_on_submit=True):
-            nama_sampel = st.text_input('Nama Sampel', required=True)
-            pic = st.text_input('PIC', required=True)
+            nama_sampel = st.text_input('Nama Sampel')
+            pic = st.text_input('PIC')
             input_date = st.date_input("Tanggal Masuk")
             output_date = st.date_input("Tanggal Keluar")
 
