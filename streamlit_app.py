@@ -50,17 +50,18 @@ with col1:
             pic = st.text_input('PIC')
             input_date = st.date_input("Tanggal Masuk")
             output_date = st.date_input("Tanggal Keluar")
+            submitted = st.form_submit_button("Submit")
 
-            if submitted:
-                if output_date < input_date:
-                    st.error('Tanggal keluar tidak valid')
-                elif nama_sampel == '' or pic == '':
-                    st.error('Nama sampel dan PIC tidak boleh kosong')
-                else:
-                    worksheet.append_row([nama_sampel, pic.title(), input_date.isoformat(), output_date.isoformat()])
-                    st.success('Data berhasil ditambahkan')
-                    time.sleep(2)
-                    st.experimental_rerun()
+        if submitted:
+            if output_date < input_date:
+                st.error('Tanggal keluar tidak valid')
+            elif nama_sampel == '' or pic == '':
+                st.error('Nama sampel dan PIC tidak boleh kosong')
+            else:
+                worksheet.append_row([nama_sampel, pic.title(), input_date.isoformat(), output_date.isoformat()])
+                st.success('Data berhasil ditambahkan')
+                time.sleep(2)
+                st.experimental_rerun()
 
 # with col1:
 #     with st.expander("Tambah sampel baru"):
