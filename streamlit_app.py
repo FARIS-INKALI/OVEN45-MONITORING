@@ -89,7 +89,7 @@ with col2:
             
         with col_2:
             sampel = st.selectbox('choose sample',
-                                  options=df.loc[df['PIC'] == pic, 'Sample'],
+                                  options=df.loc[df['PIC'] == pic, 'info'],
                                   format_func=lambda x: '' if x == "0.  " else x,
                                   disabled = st.session_state.pic_to_remove == ' ',
                                   key='sample_to_remove')
