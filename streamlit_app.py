@@ -38,7 +38,7 @@ with st.container():
 df = get_data(worksheet)
 
 def highlight_outdated(s):
-    return ['background-color: green']*len(s) if datetime.strptime(s['Tanggal Keluar'], "%Y-%m-%d").date() > date.today() else ['background-color: red']*len(s)
+    return ['background-color: red']*len(s) if datetime.strptime(s['Tanggal Keluar'], "%Y-%m-%d").date() > date.today()
 
 st.dataframe(df[1:].style.apply(highlight_outdated, axis=1), use_container_width=True)
 # st.dataframe(df[1:], use_container_width=True)
